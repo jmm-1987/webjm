@@ -129,4 +129,19 @@ document.addEventListener('DOMContentLoaded', () => {
         tooltip.style.left = x + 'px';
         tooltip.style.top = y + 'px';
     }
+
+    // Menú hamburguesa para móvil
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuList = document.getElementById('menu-list');
+    if (menuToggle && menuList) {
+        menuToggle.addEventListener('click', function() {
+            menuList.classList.toggle('menu-visible');
+        });
+        // Cerrar menú al hacer clic en un enlace
+        menuList.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuList.classList.remove('menu-visible');
+            });
+        });
+    }
 }); 

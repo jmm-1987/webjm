@@ -546,11 +546,13 @@ footer {
     min-height: unset;
   }
   .menu-portada {
-    position: static;
-    padding: 0.3em 0.5em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1000;
     border-radius: 0 0 10px 10px;
-    box-shadow: none;
-    margin-bottom: 0.5em;
+    margin-bottom: 0;
   }
   .menu-portada ul {
     flex-direction: column;
@@ -568,6 +570,7 @@ footer {
   .portada {
     flex-direction: column;
     min-height: unset;
+    padding-top: 56px; /* Altura aproximada del menú */
   }
   .portada-izq img,
   .portada-der img {
@@ -637,5 +640,46 @@ footer {
   footer {
     font-size: 0.9em;
     padding: 1em 0 0.5em 0;
+  }
+  .menu-hamburguesa {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 2.1em;
+    color: #fff;
+    position: absolute;
+    top: 8px;
+    right: 18px;
+    z-index: 1100;
+    cursor: pointer;
+    padding: 0.1em 0.3em;
+  }
+  #menu-list {
+    display: none;
+    flex-direction: column;
+    background: rgba(20,20,20,0.97);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 0.5em 0;
+    z-index: 1050;
+  }
+  #menu-list.menu-visible {
+    display: flex;
+  }
+  .menu-portada ul {
+    position: static;
+    box-shadow: none;
+    background: none;
+    padding: 0;
+  }
+}
+
+@media (min-width: 601px) {
+  .menu-hamburguesa {
+    display: none;
   }
 } 
