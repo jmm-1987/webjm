@@ -144,4 +144,122 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // --- Galería de Proyectos (Slider Modal) ---
+    // Datos de ejemplo para cada proyecto (puedes personalizar)
+    const galeriaProyectos = [
+        {
+            titulo: 'CRM inmobiliaria',
+            imagenes: [
+                { src: 'assets/images/inmobiliaria.png', desc: 'Panel principal del CRM inmobiliario.' },
+                { src: 'assets/images/inmobiliaria.png', desc: 'Gestión de propiedades y clientes.' },
+                { src: 'assets/images/inmobiliaria.png', desc: 'Agenda de visitas y tareas.' },
+                { src: 'assets/images/inmobiliaria.png', desc: 'Estadísticas y reportes.' }
+            ]
+        },
+        {
+            titulo: 'Gestión expediciones',
+            imagenes: [
+                { src: 'assets/images/sfm.png', desc: 'Vista general de expediciones.' },
+                { src: 'assets/images/sfm.png', desc: 'Detalle de rutas y entregas.' },
+                { src: 'assets/images/sfm.png', desc: 'Control de incidencias.' },
+                { src: 'assets/images/sfm.png', desc: 'Panel de estadísticas.' }
+            ]
+        },
+        {
+            titulo: 'Control de vehículos',
+            imagenes: [
+                { src: 'assets/images/vehiculos.png', desc: 'Listado de vehículos.' },
+                { src: 'assets/images/vehiculos.png', desc: 'Historial de mantenimientos.' },
+                { src: 'assets/images/vehiculos.png', desc: 'Alertas y notificaciones.' },
+                { src: 'assets/images/vehiculos.png', desc: 'Resumen de gastos.' }
+            ]
+        },
+        {
+            titulo: 'Contol de horarios',
+            imagenes: [
+                { src: 'assets/images/horarios.png', desc: 'Panel de horarios de empleados.' },
+                { src: 'assets/images/horarios.png', desc: 'Registro de fichajes.' },
+                { src: 'assets/images/horarios.png', desc: 'Gestión de turnos.' },
+                { src: 'assets/images/horarios.png', desc: 'Resumen mensual.' }
+            ]
+        },
+        {
+            titulo: 'Dashboard GeoKpi',
+            imagenes: [
+                { src: 'assets/images/analitica.png', desc: 'Mapa interactivo de KPIs.' },
+                { src: 'assets/images/analitica.png', desc: 'Filtros avanzados.' },
+                { src: 'assets/images/analitica.png', desc: 'Comparativas temporales.' },
+                { src: 'assets/images/analitica.png', desc: 'Exportación de datos.' }
+            ]
+        },
+        {
+            titulo: 'Análisis de datos',
+            imagenes: [
+                { src: 'assets/images/gasoil.png', desc: 'Panel de análisis de consumo.' },
+                { src: 'assets/images/gasoil.png', desc: 'Gráficas interactivas.' },
+                { src: 'assets/images/gasoil.png', desc: 'Alertas automáticas.' },
+                { src: 'assets/images/gasoil.png', desc: 'Exportación de informes.' }
+            ]
+        }
+    ];
+
+    const tarjetasProyectos = document.querySelectorAll('.tarjeta-proyecto');
+    const modalGaleria = document.getElementById('modal-galeria');
+    const cerrarGaleria = document.getElementById('cerrar-galeria');
+    const galeriaImagen = document.getElementById('galeria-imagen');
+    const galeriaDescripcion = document.getElementById('galeria-descripcion');
+    const galeriaPrev = document.getElementById('galeria-prev');
+    const galeriaNext = document.getElementById('galeria-next');
+    const galeriaPuntos = document.getElementById('galeria-puntos');
+
+    let galeriaActual = 0;
+    let slideActual = 0;
+
+    function mostrarSlide(index) {
+        const proyecto = galeriaProyectos[galeriaActual];
+        const imgData = proyecto.imagenes[index];
+        galeriaImagen.src = imgData.src;
+        galeriaDescripcion.textContent = imgData.desc;
+        // Actualizar puntos
+        galeriaPuntos.innerHTML = '';
+        proyecto.imagenes.forEach((_, i) => {
+            const punto = document.createElement('button');
+            punto.className = 'slider-punto' + (i === index ? ' activo' : '');
+            punto.addEventListener('click', () => {
+                slideActual = i;
+                mostrarSlide(slideActual);
+            });
+            galeriaPuntos.appendChild(punto);
+        });
+    }
+
+    tarjetasProyectos.forEach((tarjeta, idx) => {
+        tarjeta.addEventListener('click', () => {
+            galeriaActual = idx;
+            slideActual = 0;
+            mostrarSlide(slideActual);
+            modalGaleria.classList.add('activo');
+        });
+    });
+
+    galeriaPrev.addEventListener('click', () => {
+        const proyecto = galeriaProyectos[galeriaActual];
+        slideActual = (slideActual - 1 + proyecto.imagenes.length) % proyecto.imagenes.length;
+        mostrarSlide(slideActual);
+    });
+    galeriaNext.addEventListener('click', () => {
+        const proyecto = galeriaProyectos[galeriaActual];
+        slideActual = (slideActual + 1) % proyecto.imagenes.length;
+        mostrarSlide(slideActual);
+    });
+    cerrarGaleria.addEventListener('click', () => {
+        modalGaleria.classList.remove('activo');
+    });
+    // Cerrar modal al hacer clic fuera del contenido
+    modalGaleria.addEventListener('click', (e) => {
+        if (e.target === modalGaleria) {
+            modalGaleria.classList.remove('activo');
+        }
+    });
 }); 
