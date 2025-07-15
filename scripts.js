@@ -151,28 +151,28 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             titulo: 'CRM inmobiliaria',
             imagenes: [
-                { src: 'assets/images/inmobiliaria.png', desc: 'Panel principal del CRM inmobiliario.' },
-                { src: 'assets/images/inmobiliaria.png', desc: 'Gestión de propiedades y clientes.' },
-                { src: 'assets/images/inmobiliaria.png', desc: 'Agenda de visitas y tareas.' },
-                { src: 'assets/images/inmobiliaria.png', desc: 'Estadísticas y reportes.' }
+                { src: 'assets/images/inmobiliaria.png', desc: 'Panel principal del CRM inmobiliario. Vista rápida de agenda, envío de encuentas por whatsapp y registro de actividades comerciales.' },
+                { src: 'assets/images/inmoagenda.png', desc: 'Agenda con vista mensual, semanal y diaria. Agenda tareas a comercial con recordatorios por email y creación de citas en Google Calendar.' },
+                { src: 'assets/images/inmoclientes.png', desc: 'Listado de clientes diferenciados por intereses, zonas y rangos de preciones. Comunicación directa via whatsapp' },
+                { src: 'assets/images/inmoinversores.png', desc: 'Apartado de inversores con difusión global de mensajes.' }
             ]
         },
         {
             titulo: 'Gestión expediciones',
             imagenes: [
                 { src: 'assets/images/sfm.png', desc: 'Vista general de expediciones.' },
-                { src: 'assets/images/sfm.png', desc: 'Detalle de rutas y entregas.' },
-                { src: 'assets/images/sfm.png', desc: 'Control de incidencias.' },
-                { src: 'assets/images/sfm.png', desc: 'Panel de estadísticas.' }
+                { src: 'assets/images/sfmgrabar.png', desc: 'Grabación de expediciones con valoración automática.' },
+                { src: 'assets/images/sfmpresupuestos.png', desc: 'Generación de presupuesto con cálculo de precios.' },
+                { src: 'assets/images/sfmvaloracion.png', desc: 'Panel de control de albaranes facturados y no facturados con filtrado y exportación a pdf y excel.' }
             ]
         },
         {
             titulo: 'Control de vehículos',
             imagenes: [
-                { src: 'assets/images/vehiculos.png', desc: 'Listado de vehículos.' },
-                { src: 'assets/images/vehiculos.png', desc: 'Historial de mantenimientos.' },
-                { src: 'assets/images/vehiculos.png', desc: 'Alertas y notificaciones.' },
-                { src: 'assets/images/vehiculos.png', desc: 'Resumen de gastos.' }
+                { src: 'assets/images/vehiculos.png', desc: 'Pandel de control con avisos emergentes y por email o telegram con los vencimientos de pólizas, itv, extintotes....' },
+                { src: 'assets/images/aldigasoil.png', desc: 'Control de consumos de gasoil y addblue detallado por vehículo.' },
+                { src: 'assets/images/aldivisitas.png', desc: 'Mantenimiento de visitas al taller.' },
+                { src: 'assets/images/aldivehiculos.png', desc: 'Vista individual por vehículo con subida de documentación.' }
             ]
         },
         {
