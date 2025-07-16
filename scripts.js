@@ -145,61 +145,70 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Galería de Proyectos (Slider Modal) ---
+    // --- Galería de Proyectos (Modal simple) ---
     // Datos de ejemplo para cada proyecto (puedes personalizar)
     const galeriaProyectos = [
         {
             titulo: 'CRM inmobiliaria',
-            imagenes: [
-                { src: 'assets/images/inmobiliaria.png', desc: 'Panel principal del CRM inmobiliario. Vista rápida de agenda, envío de encuentas por whatsapp y registro de actividades comerciales.' },
-                { src: 'assets/images/inmoagenda.png', desc: 'Agenda con vista mensual, semanal y diaria. Agenda tareas a comercial con recordatorios por email y creación de citas en Google Calendar.' },
-                { src: 'assets/images/inmoclientes.png', desc: 'Listado de clientes diferenciados por intereses, zonas y rangos de preciones. Comunicación directa via whatsapp' },
-                { src: 'assets/images/inmoinversores.png', desc: 'Apartado de inversores con difusión global de mensajes.' }
+            imagen: 'assets/images/inmobiliaria.png',
+            descripcion: [
+                'Agenda interactiva con avisos por email, Telegram y Google Calendar',
+                'Gestión de clientes con funciones de envío de Whatsapp y comunicación de oportunidades',
+                'Registro de actividades comerciales con gestión de tareas',
+                'Seguimiento de oportunidades',
+                'Organización de tareas diarias'
             ]
         },
         {
             titulo: 'Gestión expediciones',
-            imagenes: [
-                { src: 'assets/images/sfm.png', desc: 'Vista general de expediciones.' },
-                { src: 'assets/images/sfmgrabar.png', desc: 'Grabación de expediciones con valoración automática.' },
-                { src: 'assets/images/sfmpresupuestos.png', desc: 'Generación de presupuesto con cálculo de precios.' },
-                { src: 'assets/images/sfmvaloracion.png', desc: 'Panel de control de albaranes facturados y no facturados con filtrado y exportación a pdf y excel.' }
+            imagen: 'assets/images/sfm.png',
+            descripcion: [
+                'Control y valoración automática de expediciones y clientes',
+                'Calculadora para generación de presupuestos',
+                'Avisos de vencimientos de documentación e itv de vehículos',
+                'Exportación de datos en pdf y excel',
+                'Seguimiento de procesos logísticos con impresión de albaranes de entrega',
+                'Generación de albaranes de entrega y etiquetas'
             ]
         },
         {
             titulo: 'Control de vehículos',
-            imagenes: [
-                { src: 'assets/images/vehiculos.png', desc: 'Pandel de control con avisos emergentes y por email o telegram con los vencimientos de pólizas, itv, extintotes....' },
-                { src: 'assets/images/aldigasoil.png', desc: 'Control de consumos de gasoil y addblue detallado por vehículo.' },
-                { src: 'assets/images/aldivisitas.png', desc: 'Mantenimiento de visitas al taller.' },
-                { src: 'assets/images/aldivehiculos.png', desc: 'Vista individual por vehículo con subida de documentación.' }
+            imagen: 'assets/images/vehiculos.png',
+            descripcion: [
+                'Avisos de vencimientos de pólizas, ITV, etc.',
+                'Control de consumos de combustible',
+                'Mantenimiento y visitas al taller',
+                'Gestión de documentación',
+                'Notificaciones automáticas por email y Telegram'
             ]
         },
         {
-            titulo: 'Contol de horarios',
-            imagenes: [
-                { src: 'assets/images/horarios.png', desc: 'Panel de horarios de empleados.' },
-                { src: 'assets/images/horarios.png', desc: 'Registro de fichajes.' },
-                { src: 'assets/images/horarios.png', desc: 'Gestión de turnos.' },
-                { src: 'assets/images/horarios.png', desc: 'Resumen mensual.' }
+            titulo: 'Control de horarios',
+            imagen: 'assets/images/horarios.png',
+            descripcion: [
+                'Registro de horarios y turnos',
+                'Fichajes de empleados',
+                'Resumen mensual',
+                'Gestión de incidencias'
             ]
         },
         {
             titulo: 'Dashboard GeoKpi',
-            imagenes: [
-                { src: 'assets/images/analitica.png', desc: 'Mapa interactivo de KPIs.' },
-                { src: 'assets/images/analitica.png', desc: 'Filtros avanzados.' },
-                { src: 'assets/images/analitica.png', desc: 'Comparativas temporales.' },
-                { src: 'assets/images/analitica.png', desc: 'Exportación de datos.' }
+            imagen: 'assets/images/analitica.png',
+            descripcion: [
+                'KPIs geolocalizados',
+                'Resultados por zonas',
+                'Gráficas personalizadas',
+                'Dashboard interactivo para toma de decisiones'
             ]
         },
         {
             titulo: 'Análisis de datos',
-            imagenes: [
-                { src: 'assets/images/gasoil.png', desc: 'Panel de análisis de consumo.' },
-                { src: 'assets/images/gasoil.png', desc: 'Gráficas interactivas.' },
-                { src: 'assets/images/gasoil.png', desc: 'Alertas automáticas.' },
-                { src: 'assets/images/gasoil.png', desc: 'Exportación de informes.' }
+            imagen: 'assets/images/gasoil.png',
+            descripcion: [
+                'Análisis avanzado de consumos',
+                'Generación de alertas automáticas',
+                'Exportación de informes personalizados'
             ]
         }
     ];
@@ -208,51 +217,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalGaleria = document.getElementById('modal-galeria');
     const cerrarGaleria = document.getElementById('cerrar-galeria');
     const galeriaImagen = document.getElementById('galeria-imagen');
+    const galeriaTitulo = document.getElementById('galeria-titulo');
     const galeriaDescripcion = document.getElementById('galeria-descripcion');
-    const galeriaPrev = document.getElementById('galeria-prev');
-    const galeriaNext = document.getElementById('galeria-next');
-    const galeriaPuntos = document.getElementById('galeria-puntos');
 
     let galeriaActual = 0;
-    let slideActual = 0;
 
-    function mostrarSlide(index) {
+    function mostrarProyecto() {
         const proyecto = galeriaProyectos[galeriaActual];
-        const imgData = proyecto.imagenes[index];
-        galeriaImagen.src = imgData.src;
-        galeriaDescripcion.textContent = imgData.desc;
-        // Actualizar puntos
-        galeriaPuntos.innerHTML = '';
-        proyecto.imagenes.forEach((_, i) => {
-            const punto = document.createElement('button');
-            punto.className = 'slider-punto' + (i === index ? ' activo' : '');
-            punto.addEventListener('click', () => {
-                slideActual = i;
-                mostrarSlide(slideActual);
-            });
-            galeriaPuntos.appendChild(punto);
-        });
+        galeriaImagen.src = proyecto.imagen;
+        galeriaTitulo.textContent = proyecto.titulo;
+        // Mostrar la descripción como lista
+        galeriaDescripcion.innerHTML = '<ul>' + proyecto.descripcion.map(punto => `<li>${punto}</li>`).join('') + '</ul>';
     }
 
     tarjetasProyectos.forEach((tarjeta, idx) => {
         tarjeta.addEventListener('click', () => {
             galeriaActual = idx;
-            slideActual = 0;
-            mostrarSlide(slideActual);
+            mostrarProyecto();
             modalGaleria.classList.add('activo');
         });
     });
 
-    galeriaPrev.addEventListener('click', () => {
-        const proyecto = galeriaProyectos[galeriaActual];
-        slideActual = (slideActual - 1 + proyecto.imagenes.length) % proyecto.imagenes.length;
-        mostrarSlide(slideActual);
-    });
-    galeriaNext.addEventListener('click', () => {
-        const proyecto = galeriaProyectos[galeriaActual];
-        slideActual = (slideActual + 1) % proyecto.imagenes.length;
-        mostrarSlide(slideActual);
-    });
     cerrarGaleria.addEventListener('click', () => {
         modalGaleria.classList.remove('activo');
     });
