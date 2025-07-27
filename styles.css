@@ -841,6 +841,297 @@ footer {
   }
 } 
 
+/* Estilos para la página de reservas */
+.header-reservas {
+  background: #fff;
+  border-bottom: 1.5px solid #111;
+  padding: 1em 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 2em;
+}
+
+.logo-header {
+  height: 60px;
+  width: auto;
+}
+
+.nav-reservas {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  color: #111;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  padding: 0.5em 1em;
+  border: 2px solid #111;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background: #111;
+  color: #fff;
+}
+
+.seccion-demo {
+  margin: 2em auto;
+  padding: 0;
+  min-height: 80vh;
+  position: relative;
+  background: #fff;
+  border: 4px solid #111;
+  border-radius: 14px;
+  max-width: 1500px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.demo-container {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
+
+.video-section {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.video-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.video-section h2 {
+  color: #222;
+  font-size: 2rem;
+  margin-bottom: 1.5em;
+  font-weight: 600;
+}
+
+.video-container {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto 2em auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  background: #000;
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.texto-destacado {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+  margin-top: 1.5em;
+}
+
+.badge {
+  background: linear-gradient(135deg, #4285f4, #34a853);
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9em;
+  box-shadow: 0 2px 8px rgba(66,133,244,0.3);
+  transition: transform 0.2s ease;
+}
+
+  .badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(66,133,244,0.4);
+  }
+
+/* Estilos para la sección de beneficios */
+.seccion-beneficios {
+  margin: 2em auto;
+  padding: 0;
+  min-height: 60vh;
+  position: relative;
+  background: #fff;
+  border: 4px solid #111;
+  border-radius: 14px;
+  max-width: 1500px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.beneficios-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2em;
+  padding: 2em;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.beneficio-item {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 2em;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.beneficio-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(66,133,244,0.15);
+  border-color: #4285f4;
+}
+
+.beneficio-icono {
+  font-size: 3rem;
+  margin-bottom: 1em;
+  display: block;
+}
+
+.beneficio-item h3 {
+  color: #222;
+  font-size: 1.3rem;
+  margin-bottom: 1em;
+  font-weight: 600;
+}
+
+.beneficio-item p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsive para la página de reservas */
+@media (max-width: 900px) {
+  .header-content {
+    padding: 0 1em;
+  }
+  
+  .logo-header {
+    height: 50px;
+  }
+  
+  .nav-link {
+    font-size: 1em;
+    padding: 0.4em 0.8em;
+  }
+  
+  .seccion-demo {
+    max-width: 96vw;
+    margin: 1em auto;
+  }
+  
+  .demo-container {
+    padding: 1em;
+  }
+  
+  .video-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .texto-destacado {
+    gap: 0.8em;
+  }
+  
+  .badge {
+    font-size: 0.8em;
+    padding: 0.4em 0.8em;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-content {
+    flex-direction: column;
+    gap: 1em;
+    padding: 0.5em 1em;
+  }
+  
+  .logo-header {
+    height: 40px;
+  }
+  
+  .seccion-demo {
+    max-width: 99vw;
+    border-width: 2px;
+    border-radius: 8px;
+  }
+  
+  .demo-container {
+    padding: 0.5em;
+  }
+  
+  .video-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1em;
+  }
+  
+  .texto-destacado {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+  }
+  
+  .badge {
+    font-size: 0.75em;
+    padding: 0.3em 0.6em;
+  }
+  
+  .seccion-beneficios {
+    max-width: 99vw;
+    border-width: 2px;
+    border-radius: 8px;
+  }
+  
+  .beneficios-container {
+    grid-template-columns: 1fr;
+    gap: 1em;
+    padding: 1em;
+  }
+  
+  .beneficio-item {
+    padding: 1.5em;
+  }
+  
+  .beneficio-icono {
+    font-size: 2.5rem;
+  }
+  
+  .beneficio-item h3 {
+    font-size: 1.1rem;
+  }
+  
+  .beneficio-item p {
+    font-size: 0.9rem;
+  }
+}
+
 .modal-galeria-cerrar {
   position: absolute;
   top: 12px;
