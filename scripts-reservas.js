@@ -1,29 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Elementos de video
     const video1 = document.getElementById('video1');
-    const video2 = document.getElementById('video2');
     const video3 = document.getElementById('video3');
     
     // Secciones de video
     const videoReserva = document.getElementById('video-reserva');
-    const videoTelegram = document.getElementById('video-telegram');
     const videoPanel = document.getElementById('video-panel');
     
     // Mostrar la primera sección al cargar
     videoReserva.classList.add('visible');
     
+
+    
     // Función para cambiar a la siguiente sección
     function mostrarSiguienteVideo() {
         if (videoReserva.style.display !== 'none') {
-            // Ocultar video 1 y mostrar video 2
+            // Ocultar video 1 y mostrar video 3 (panel de control)
             videoReserva.style.display = 'none';
-            videoTelegram.style.display = 'block';
-            setTimeout(() => {
-                videoTelegram.classList.add('visible');
-            }, 100);
-        } else if (videoTelegram.style.display !== 'none') {
-            // Ocultar video 2 y mostrar video 3
-            videoTelegram.style.display = 'none';
             videoPanel.style.display = 'block';
             setTimeout(() => {
                 videoPanel.classList.add('visible');
@@ -39,13 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    if (video2) {
-        video2.addEventListener('ended', function() {
-            console.log('Video 2 terminado');
-            mostrarSiguienteVideo();
-        });
-    }
-    
     if (video3) {
         video3.addEventListener('ended', function() {
             console.log('Video 3 terminado');
@@ -54,11 +40,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert('¡Demostración completada! Gracias por ver nuestro sistema de reservas.');
                 // Reiniciar al primer video
                 videoPanel.style.display = 'none';
-                videoTelegram.style.display = 'none';
                 videoReserva.style.display = 'block';
                 videoReserva.classList.add('visible');
                 if (video1) video1.currentTime = 0;
-                if (video2) video2.currentTime = 0;
                 if (video3) video3.currentTime = 0;
             }, 1000);
         });
@@ -69,11 +53,21 @@ document.addEventListener('DOMContentLoaded', function() {
         // Cargar el video de reserva
         if (video1) {
             video1.src = 'assets/videos/video_reserva.mp4';
+            
+            // Manejar errores de carga
+            video1.addEventListener('error', function(e) {
+                console.error('Error cargando video:', e);
+                alert('Error al cargar el video. Verifica que el archivo existe.');
+            });
+            
+            video1.addEventListener('loadeddata', function() {
+                console.log('Video de reserva cargado correctamente');
+            });
+            
             console.log('Video de reserva cargado: video_reserva.mp4');
         }
         
         // Los otros videos se cargarán cuando los tengas
-        // if (video2) video2.src = 'assets/videos/notificacion-telegram.mp4';
         // if (video3) video3.src = 'assets/videos/panel-control.mp4';
         
         console.log('Video de reserva listo para reproducir.');
@@ -86,17 +80,14 @@ document.addEventListener('DOMContentLoaded', function() {
     function reiniciarDemo() {
         // Ocultar todos los videos excepto el primero
         videoPanel.style.display = 'none';
-        videoTelegram.style.display = 'none';
         videoReserva.style.display = 'block';
         
         // Reiniciar todos los videos
         if (video1) video1.currentTime = 0;
-        if (video2) video2.currentTime = 0;
         if (video3) video3.currentTime = 0;
         
         // Mostrar solo la primera sección
         videoReserva.classList.add('visible');
-        videoTelegram.classList.remove('visible');
         videoPanel.classList.remove('visible');
     }
     

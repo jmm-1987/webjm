@@ -957,6 +957,8 @@ footer {
 
 .video-container-small {
   flex: 0 0 350px;
+  width: 350px;
+  max-width: 350px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
@@ -964,9 +966,11 @@ footer {
 }
 
 .video-container-small video {
-  width: 100%;
-  height: auto;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
   display: block;
+  object-fit: contain;
 }
 
 .texto-destacado-lateral {
@@ -1114,8 +1118,8 @@ footer {
   
   .video-container-small {
     flex: none;
-    width: 100%;
-    max-width: 300px;
+    width: 300px !important;
+    max-width: 300px !important;
   }
   
   .texto-destacado-lateral {
@@ -1173,8 +1177,8 @@ footer {
   
   .video-container-small {
     flex: none;
-    width: 100%;
-    max-width: 250px;
+    width: 250px !important;
+    max-width: 250px !important;
   }
   
   .texto-destacado-lateral {
@@ -1195,6 +1199,8 @@ footer {
     font-size: 1.1rem;
     text-align: center;
   }
+  
+
   
   .seccion-beneficios {
     max-width: 99vw;
