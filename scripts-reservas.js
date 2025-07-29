@@ -66,13 +66,17 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Función para cargar videos (cuando tengas los archivos)
     function cargarVideos() {
-        // Aquí puedes especificar las rutas de tus videos
-        // Ejemplo:
-        // if (video1) video1.src = 'assets/videos/reserva-cliente.mp4';
+        // Cargar el video de reserva
+        if (video1) {
+            video1.src = 'assets/videos/video_reserva.mp4';
+            console.log('Video de reserva cargado: video_reserva.mp4');
+        }
+        
+        // Los otros videos se cargarán cuando los tengas
         // if (video2) video2.src = 'assets/videos/notificacion-telegram.mp4';
         // if (video3) video3.src = 'assets/videos/panel-control.mp4';
         
-        console.log('Videos listos para cargar. Añade las rutas de tus archivos de video.');
+        console.log('Video de reserva listo para reproducir.');
     }
     
     // Llamar a la función de carga
