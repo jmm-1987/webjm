@@ -895,13 +895,13 @@ footer {
   background: #fff;
   border: 4px solid #111;
   border-radius: 14px;
-  max-width: 1500px;
+  max-width: 1800px;
   box-sizing: border-box;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .demo-container {
-  padding: 1em;
+  padding: 1.5em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -950,20 +950,27 @@ footer {
   display: flex;
   align-items: flex-start;
   gap: 2em;
-  max-width: 800px;
+  max-width: 1400px;
   margin: 0 auto;
   padding-top: 0;
 }
 
-.video-container-small {
-  flex: 0 0 350px;
-  width: 350px;
-  max-width: 350px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-  background: #000;
-}
+  .video-container-small {
+    flex: 0 0 350px;
+    width: 350px;
+    max-width: 350px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    background: #000;
+  }
+  
+  /* Video del panel más grande */
+  #video-panel .video-container-small {
+    flex: 0 0 700px;
+    width: 700px;
+    max-width: 700px;
+  }
 
 .video-container-small video {
   width: 100% !important;
@@ -1089,7 +1096,7 @@ footer {
   }
   
   .seccion-demo {
-    max-width: 96vw;
+    max-width: 98vw;
     margin: 1em auto;
   }
   
@@ -1114,12 +1121,18 @@ footer {
     flex-direction: column;
     gap: 1em;
     align-items: center;
+    max-width: 1200px;
   }
   
   .video-container-small {
     flex: none;
     width: 300px !important;
     max-width: 300px !important;
+  }
+  
+  #video-panel .video-container-small {
+    width: 600px !important;
+    max-width: 600px !important;
   }
   
   .texto-destacado-lateral {
@@ -1144,7 +1157,7 @@ footer {
   }
   
   .seccion-demo {
-    max-width: 99vw;
+    max-width: 99.5vw;
     border-width: 2px;
     border-radius: 8px;
   }
@@ -1173,12 +1186,18 @@ footer {
     flex-direction: column;
     gap: 0.5em;
     align-items: center;
+    max-width: 1000px;
   }
   
   .video-container-small {
     flex: none;
     width: 250px !important;
     max-width: 250px !important;
+  }
+  
+  #video-panel .video-container-small {
+    width: 500px !important;
+    max-width: 500px !important;
   }
   
   .texto-destacado-lateral {
