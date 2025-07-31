@@ -74,17 +74,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (video4) {
         video4.addEventListener('ended', function() {
             console.log('Video 4 terminado');
-            // Opcional: mostrar mensaje de finalización o reiniciar
-            setTimeout(() => {
-                alert('¡Demostración completada! Gracias por ver nuestro sistema de reservas.');
-                // Reiniciar al primer video
-                videoPanelMovil.style.display = 'none';
-                videoReserva.style.display = 'block';
-                videoReserva.classList.add('visible');
-                if (video1) video1.currentTime = 0;
-                if (video3) video3.currentTime = 0;
-                if (video4) video4.currentTime = 0;
-            }, 1000);
+            // Reiniciar al primer video sin mostrar aviso
+            videoPanelMovil.style.display = 'none';
+            videoReserva.style.display = 'block';
+            videoReserva.classList.add('visible');
+            if (video1) video1.currentTime = 0;
+            if (video3) video3.currentTime = 0;
+            if (video4) video4.currentTime = 0;
         });
     }
     
