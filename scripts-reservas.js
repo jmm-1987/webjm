@@ -176,4 +176,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     `;
     document.head.appendChild(style);
-}); 
+});
+
+// Función para mostrar el proceso
+function mostrarProceso() {
+    const mensaje = `Al tratarse de software personalizado necesitamos contactar con el comprador para coordinar algunas cosas:
+
+1º - Hablamos para consensuar el diseño y funcionalidades específicas de tu web (número de empleados, tratamientos, duración...)
+
+2º - Te mando varios diseños para que elijas el que más te gusta.
+
+3º - Empieza tu periodo de pruebas.
+
+4º - En un mes contactamos y me dices si te convence.
+
+5º - Siendo así acordamos la forma de pago anual.
+
+    Si no te convence, pues nada...`;
+
+    alert(mensaje);
+} 
