@@ -1338,4 +1338,66 @@ footer {
   .whatsapp-text {
     font-size: 12px;
   }
+}
+
+/* Etiqueta de precio */
+.precio-etiqueta {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+}
+
+.precio-texto {
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  color: white;
+  padding: 0.6em 1.2em;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 1.2em;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+  animation: precioGlow 2s ease-in-out infinite alternate;
+  position: relative;
+  overflow: hidden;
+}
+
+.precio-texto::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shine 3s infinite;
+}
+
+@keyframes precioGlow {
+  from {
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+    transform: scale(1);
+  }
+  to {
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.7);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Responsive para la etiqueta de precio */
+@media (max-width: 600px) {
+  .precio-texto {
+    font-size: 1.1em;
+    padding: 0.5em 1em;
+  }
 } 
