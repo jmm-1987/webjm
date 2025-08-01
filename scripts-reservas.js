@@ -146,6 +146,39 @@ document.addEventListener('DOMContentLoaded', function() {
     botonReinicio.onclick = reiniciarDemo;
     document.querySelector('.demo-container').appendChild(botonReinicio);
     
+    // Función para mostrar el proceso
+    function mostrarProceso() {
+        // Determinar qué video está activo
+        let procesoInfo = null;
+        
+        if (videoReserva.style.display !== 'none') {
+            procesoInfo = document.getElementById('proceso-info-1');
+        } else if (videoPanel.style.display !== 'none') {
+            procesoInfo = document.getElementById('proceso-info-3');
+        } else if (videoPanelMovil.style.display !== 'none') {
+            procesoInfo = document.getElementById('proceso-info-4');
+        }
+        
+        if (procesoInfo) {
+            // Ocultar todos los recuadros de proceso
+            document.querySelectorAll('.proceso-info').forEach(info => {
+                info.style.display = 'none';
+            });
+            
+            // Mostrar el recuadro correspondiente
+            procesoInfo.style.display = 'block';
+            
+            // Scroll suave hacia el recuadro
+            procesoInfo.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'center' 
+            });
+        }
+    }
+    
+    // Hacer la función global
+    window.mostrarProceso = mostrarProceso;
+    
     // Estilos para el botón de reinicio
     const style = document.createElement('style');
     style.textContent = `

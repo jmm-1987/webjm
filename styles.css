@@ -1494,4 +1494,141 @@ footer {
     font-size: 0.9em;
     padding: 0.6em 1.2em;
   }
+}
+
+/* Estilos para el recuadro de proceso */
+.proceso-info {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  margin: 2em auto;
+  max-width: 800px;
+  overflow: hidden;
+  border: 2px solid #e0e0e0;
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.proceso-contenido {
+  padding: 2em;
+}
+
+.proceso-contenido h3 {
+  color: #222;
+  font-size: 1.5rem;
+  margin-bottom: 1.5em;
+  text-align: center;
+}
+
+.proceso-pasos {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.paso {
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+  padding: 1em;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #4285f4;
+}
+
+.paso-numero {
+  background: #4285f4;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.paso-contenido h4 {
+  color: #222;
+  font-size: 1.1rem;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+.paso-contenido p {
+  color: #555;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.proceso-cta {
+  text-align: center;
+  margin-top: 2em;
+  padding-top: 1.5em;
+  border-top: 2px solid #e0e0e0;
+}
+
+.proceso-cta p {
+  color: #222;
+  font-size: 1.1rem;
+  margin-bottom: 1em;
+  font-weight: 600;
+}
+
+.cta-boton {
+  background: linear-gradient(135deg, #4285f4, #34a853);
+  color: white;
+  padding: 1em 2em;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(66,133,244,0.3);
+}
+
+.cta-boton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(66,133,244,0.4);
+}
+
+@media (max-width: 600px) {
+  .proceso-info {
+    margin: 1em auto;
+    max-width: 95vw;
+  }
+  
+  .proceso-contenido {
+    padding: 1.5em;
+  }
+  
+  .proceso-contenido h3 {
+    font-size: 1.3rem;
+  }
+  
+  .paso {
+    padding: 0.8em;
+  }
+  
+  .paso-contenido h4 {
+    font-size: 1rem;
+  }
+  
+  .paso-contenido p {
+    font-size: 0.9rem;
+  }
 } 
