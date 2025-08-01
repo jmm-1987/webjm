@@ -1269,4 +1269,229 @@ footer {
 .modal-galeria-cerrar:hover {
   color: #174ea6;
   background: #e3e9f7;
+}
+
+/* Botón flotante de WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: white;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 16px;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 15px 25px;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: whatsappFloat 3s ease-in-out infinite;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.whatsapp-float:hover {
+  background: linear-gradient(135deg, #128c7e, #075e54);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.whatsapp-float:active {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.whatsapp-float img {
+  width: 28px;
+  height: 28px;
+  margin-right: 12px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover img {
+  transform: rotate(10deg) scale(1.1);
+}
+
+.whatsapp-text {
+  font-weight: bold;
+  white-space: nowrap;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.whatsapp-text::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.8);
+  transition: width 0.3s ease;
+}
+
+.whatsapp-float:hover .whatsapp-text::after {
+  width: 100%;
+}
+
+@keyframes whatsappFloat {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+  }
+  50% {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+  }
+}
+
+/* Responsive para el botón de WhatsApp */
+@media (max-width: 600px) {
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 18px;
+    font-size: 14px;
+    border-radius: 20px;
+  }
+  
+  .whatsapp-float img {
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+  }
+  
+  .whatsapp-text {
+    font-size: 12px;
+  }
+  
+  .whatsapp-float:hover {
+    transform: translateY(-3px) scale(1.03);
+  }
+}
+
+/* Etiqueta de precio */
+.precio-etiqueta {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+}
+
+.precio-texto {
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  color: white;
+  padding: 0.6em 1.2em;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 1.2em;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+  animation: precioGlow 2s ease-in-out infinite alternate;
+  position: relative;
+  overflow: hidden;
+}
+
+.precio-texto::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shine 3s infinite;
+}
+
+@keyframes precioGlow {
+  from {
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+    transform: scale(1);
+  }
+  to {
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.7);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Responsive para la etiqueta de precio */
+@media (max-width: 600px) {
+  .precio-texto {
+    font-size: 1.1em;
+    padding: 0.5em 1em;
+  }
+}
+
+/* Botón del proceso */
+.proceso-boton-container {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+}
+
+.proceso-boton {
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  color: white;
+  border: 2px solid #ff6b35;
+  padding: 1em 2em;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.proceso-boton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.proceso-boton:hover::before {
+  left: 100%;
+}
+
+.proceso-boton:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6);
+  background: linear-gradient(135deg, #f7931e, #ff6b35);
+  border-color: #f7931e;
+}
+
+.proceso-boton:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+/* Responsive para el botón del proceso */
+@media (max-width: 600px) {
+  .proceso-boton {
+    font-size: 0.9em;
+    padding: 0.6em 1.2em;
+  }
 } 

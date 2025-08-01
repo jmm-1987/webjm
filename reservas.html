@@ -42,14 +42,20 @@
               Tu navegador no soporta el elemento video.
             </video>
           </div>
-          <div class="texto-destacado-lateral">
-            <h2 class="titulo-lateral">Proceso de Reserva del cliente</h2>
-            <span class="badge">Sin registros ni descargas</span>
-            <span class="badge">Fácil e intuitivo</span>
-            <span class="badge">Tu imagen lo primero</span>
-            <span class="badge">No pierdas tiempo agendando citas</span>
-            <span class="badge">Diseño 100% personalizable</span>
-          </div>
+                     <div class="texto-destacado-lateral">
+             <h2 class="titulo-lateral">Proceso de Reserva del cliente</h2>
+             <span class="badge">Sin registros ni descargas</span>
+             <span class="badge">Fácil e intuitivo</span>
+             <span class="badge">Tu imagen lo primero</span>
+             <span class="badge">No pierdas tiempo agendando citas</span>
+             <span class="badge">Diseño 100% personalizable</span>
+             <div class="precio-etiqueta">
+               <span class="precio-texto">Solo 15€/mes</span>
+             </div>
+             <div class="proceso-boton-container">
+               <button class="proceso-boton" onclick="mostrarProceso()">¿Cómo es el proceso?</button>
+             </div>
+           </div>
         </div>
       </div>
 
@@ -64,14 +70,20 @@
               Tu navegador no soporta el elemento video.
             </video>
           </div>
-          <div class="texto-destacado-lateral">
-            <h2 class="titulo-lateral">Panel de Control en tu PC</h2>
-            <span class="badge">Recordatorio a clientes por email</span>
-            <span class="badge">Gestión centralizada</span>
-            <span class="badge">Control total</span>
-            <span class="badge">Optimización de tiempo</span>
-            <span class="badge">Proceso completamente automatizado</span>
-          </div>
+                     <div class="texto-destacado-lateral">
+             <h2 class="titulo-lateral">Panel de Control en tu PC</h2>
+             <span class="badge">Recordatorio a clientes por email</span>
+             <span class="badge">Gestión centralizada</span>
+             <span class="badge">Control total</span>
+             <span class="badge">Optimización de tiempo</span>
+             <span class="badge">Proceso completamente automatizado</span>
+             <div class="precio-etiqueta">
+               <span class="precio-texto">Solo 15€/mes</span>
+             </div>
+             <div class="proceso-boton-container">
+               <button class="proceso-boton" onclick="mostrarProceso()">¿Cómo es el proceso?</button>
+             </div>
+           </div>
         </div>
       </div>
 
@@ -84,14 +96,20 @@
               Tu navegador no soporta el elemento video.
             </video>
           </div>
-          <div class="texto-destacado-lateral">
-            <h2 class="titulo-lateral">Panel de Control en tu Móvil</h2>
-            <span class="badge">Acceso desde cualquier lugar</span>
-            <span class="badge">Gestión móvil completa</span>
-            <span class="badge">Notificaciones push</span>
-            <span class="badge">Sincronización en tiempo real</span>
-            <span class="badge">Interfaz adaptada a móvil</span>
-          </div>
+                     <div class="texto-destacado-lateral">
+             <h2 class="titulo-lateral">Panel de Control en tu Móvil</h2>
+             <span class="badge">Acceso desde cualquier lugar</span>
+             <span class="badge">Gestión móvil completa</span>
+             <span class="badge">Notificaciones push</span>
+             <span class="badge">Sincronización en tiempo real</span>
+             <span class="badge">Interfaz adaptada a móvil</span>
+             <div class="precio-etiqueta">
+               <span class="precio-texto">Solo 15€/mes</span>
+             </div>
+             <div class="proceso-boton-container">
+               <button class="proceso-boton" onclick="mostrarProceso()">¿Cómo es el proceso?</button>
+             </div>
+           </div>
         </div>
       </div>
     </div>
@@ -138,9 +156,46 @@
     </div>
   </section>
 
+  <!-- Sección de contacto -->
+  <section id="contacto" class="seccion contacto">
+    <div class="banda-negra">
+      <img src="assets/images/contacto.png" alt="Contacto">
+    </div>
+    <div class="tarjeta-contacto">
+      <img class="foto-contacto" src="assets/images/fotoo.png" alt="Foto de contacto">
+      <div class="info-contacto">
+        <p>
+          <img src="https://api.iconify.design/material-symbols/mail.svg?color=%234285f4" alt="Email" class="icono-contacto">
+          <a href="mailto:jomma.tech@gmail.com">jomma.tech@gmail.com</a>
+        </p>
+        <p>
+          <img src="https://api.iconify.design/bi/telephone-fill.svg" alt="Teléfono" class="icono-contacto">
+          +34 619639616
+        </p>
+        <p>
+          <a id="whatsapp-link" href="#" style="text-decoration:none; color:inherit;">
+            <img src="https://api.iconify.design/logos/whatsapp-icon.svg" alt="WhatsApp" class="icono-contacto">
+            WhatsApp
+          </a>
+        </p>
+      </div>
+      <img class="logo-tarjeta-contacto" src="assets/images/logo jonatan.png" alt="Logo Jonatan">
+    </div>
+  </section>
+
   <footer>
     <p>&copy; 2024 Jonatan Murillo Mateo. Todos los derechos reservados.</p>
   </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://wa.me/34619639616?text=Hola,%20tengo%20una%20consulta" 
+     class="whatsapp-float" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     title="¿Alguna consulta?">
+    <img src="https://api.iconify.design/logos/whatsapp-icon.svg?color=white" alt="WhatsApp">
+    <span class="whatsapp-text">¿Alguna consulta?</span>
+  </a>
 
   <script src="scripts-reservas.js"></script>
 </body>
